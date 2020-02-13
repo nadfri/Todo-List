@@ -1,0 +1,113 @@
+body {
+  height: 900px;
+  border: solid 1px gold;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-size: 45px;
+  height: 50px;
+}
+
+#divControl {
+  text-align: center;
+  height: 20px;
+}
+
+.effects {
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari et Chrome */
+  -o-animation: fadein 3s; /* Opera */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* sur Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* sur Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+input:valid {
+  background-color: #bbf7ca;
+}
+
+input:invalid {
+  background-color: #f7f7f7;
+
+}
+
+p{
+  background-color: #e3f2f2;
+  border: solid 1px #c7edec;
+  margin: 0;
+}
+
+p:hover{
+
+
+  background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+}
+
+.options{
+  border: solid 1px grey;
+  border-radius: 5px;
+  background-color: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.options:hover{
+  opacity: 1;
+}
+
+#done{
+  border: solid 1px grey;
+  border-radius: 5px;
+  color: transparent;
+  cursor: pointer;
+}
+
+#done:hover{
+  color: black;
+}
+
+.tab{
+  margin-left: 1em;
+}
