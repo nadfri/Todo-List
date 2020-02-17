@@ -12,15 +12,17 @@
   <header>My ToDo List</header>
   <div id="divControl"></div>
   <div id="div1">
-    <input type="text" id="input" placeholder="Ajouter une nouvelle tâche    ex: Faire mes courses" required
-      autofocus />
-    <button id="historic">Historique</button>
+    <input type="text" id="input" placeholder="Ajouter une nouvelle tâche (Ex: Faire mes courses)" required
+      autofocus autocomplete="off"/>
+    <button id="btHistoric">Historique</button>
   </div>
   <div id="div2">
-    <fieldset id="fieldset">
-      <legend>Liste des Tâches:</legend>
+    <fieldset id="fieldsetTask">
+      <legend>Liste des Tâches:</legend></fieldset>
 
-    </fieldset>
+    <fieldset id="fieldsetHist">
+      <legend>Historique:</legend></fieldset>
+
   </div>
 </body>
 

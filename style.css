@@ -26,10 +26,10 @@ header {
 }
 
 .effects {
-  animation: fadein 3s;
-  -moz-animation: fadein 3s; /* Firefox */
-  -webkit-animation: fadein 3s; /* Safari et Chrome */
-  -o-animation: fadein 3s; /* Opera */
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari et Chrome */
+  -o-animation: fadein 1s; /* Opera */
 }
 @keyframes fadein {
   from {
@@ -67,13 +67,56 @@ header {
   }
 }
 
+.effectsOut {
+  animation: fadeout 1s;
+  -moz-animation: fadeout 1s; /* Firefox */
+  -webkit-animation: fadeout 1s; /* Safari et Chrome */
+  -o-animation: fadeout 1s; /* Opera */
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeout {
+  /* sur Firefox */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeout {
+  /* sur Safari et Chrome */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeout {
+  /* sur Opera */
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
 #div1{
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-#historic{
+#btHistoric{
   width: 10%;
   background-color: #ADBDC6;
   cursor: pointer;
@@ -107,19 +150,19 @@ p{
 }
 
 p:hover{
-
-
   background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
 }
 
+
+
 .options{
   border: solid 1px grey;
   border-radius: 5px;
-  background-color: transparent;
-  opacity: 0.5;
+  opacity: 0.3;
+  transition-duration: 0.4s;
   cursor: pointer;
 }
 
@@ -127,24 +170,12 @@ p:hover{
   opacity: 1;
 }
 
-.spanDone{
-  border: solid 1px grey;
-  border-radius: 5px;
-  color: transparent;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.spanDone:hover{
-  color: black;
-}
-
-.spanDone:active{
+.options:active{
   font-size: larger;
 }
 
 .tab{
-  margin-left: 1em;
+  
 }
 
 ::placeholder {
@@ -156,4 +187,9 @@ p:hover{
 fieldset{
   border-radius: 5px;
 }
+
+#fieldsetHist{
+  display: none;
+}
+
 
