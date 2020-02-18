@@ -22,8 +22,8 @@ const setUrgent = (element) => {
 
 /********************************************************************/
 const deleteTask =(element,text,color)=>{
-  element.parentNode.className = "effectsOut";
-  setTimeout(() => {element.parentNode.remove();},1000);
+  element.closest("p").className = "effectsOut";
+  setTimeout(() => {element.closest("p").remove();},500);
   divControlEffects(text, color);
 
 };
@@ -44,12 +44,11 @@ const saveTask = (element) => {
   };
 
   const regex = /<z>(.*)<\/z>/; //use false balise <z> to catch the text of Task
-  let textTask = element.parentNode.innerHTML.match(regex)[0];
+  let textTask = element.closest("p").innerHTML.match(regex)[0];
   fieldsetHist.appendChild(document.createElement("p")).innerHTML = `${textTask}
                               <span class='tab'>
-                                <i>Fait le: ${dateNow()}</i>
-                              </span>
-                              ${del}`;
+                                <i>Fait le: ${dateNow()}</i>${del}
+                              </span>`;
  
 
   deleteTask(element,task_history,"#BBF7CA");
@@ -82,9 +81,8 @@ window.onload = function () {
 
       fieldsetTask.appendChild(document.createElement("p")).innerHTML= `${check} <z>${input.value}</z> 
                                     <span class='tab'>
-                                      <i>Ajouté le: ${dateNow()}</i>
-                                    </span>
-                                    ${urgent}${del}`;
+                                      <i>Ajouté le: ${dateNow()}</i>${urgent}${del}
+                                    </span>`;
       input.value = "";
       input.focus();
     }
@@ -107,7 +105,7 @@ window.onload = function () {
     if(btHistoric.textContent    == "Historique")
     {
       fieldsetTask.style.display = "none";
-      fieldsetHist.style.display = "block";
+      fieldsetHist.style.display = "inherit";
       btHistoric.textContent     = "Tâches";
       input.disabled             = true;
       input.placeholder          = "Cliquez sur Tâches pour revenir à la liste en cours...";
