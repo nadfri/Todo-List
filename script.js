@@ -23,7 +23,7 @@ const setUrgent = (element) => {
 /********************************************************************/
 const deleteTask =(element,text,color)=>{
   element.closest("p").className = "effectsOut";
-  setTimeout(() => {element.closest("p").remove();},500);
+  setTimeout(() => {element.closest("p").remove();},400);
   divControlEffects(text, color);
 
 };
@@ -45,11 +45,13 @@ const saveTask = (element) => {
 
   const regex = /<z>(.*)<\/z>/; //use false balise <z> to catch the text of Task
   let textTask = element.closest("p").innerHTML.match(regex)[0];
+  
   fieldsetHist.appendChild(document.createElement("p")).innerHTML = `${textTask}
-                              <span class='tab'>
-                                <i>Fait le: ${dateNow()}</i>${del}
+                              <span class='tab2'>
+                                <i>Fait le: ${dateNow()}</i> ${del}
                               </span>`;
- 
+
+  element.innerHTML ="";
 
   deleteTask(element,task_history,"#BBF7CA");
 };

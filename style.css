@@ -68,10 +68,10 @@ header {
 }
 
 .effectsOut {
-  animation: fadeout 0.5s;
-  -moz-animation: fadeout 0.5s; /* Firefox */
-  -webkit-animation: fadeout 0.5s; /* Safari et Chrome */
-  -o-animation: fadeout 0.5s; /* Opera */
+  animation: fadeout 400ms;
+  -moz-animation: fadeout 400ms; /* Firefox */
+  -webkit-animation: fadeout 400ms; /* Safari et Chrome */
+  -o-animation: fadeout 400ms; /* Opera */
 }
 @keyframes fadeout {
   from {
@@ -147,7 +147,6 @@ p{
   background-color: #e3f2f2;
   border: solid 1px #c7edec;
   margin: 0;
-
 }
 
 p:hover{
@@ -177,10 +176,17 @@ p:hover{
 
 .tab{
   float: right;
-  clear: both;
+
 }
 
-::placeholder {
+.tab2{
+  float: right;
+  line-height: 120%;
+
+}
+
+
+::placeholder{
   font-size: 0.7em;
   font-style: italic;
   text-align: center;
@@ -188,12 +194,11 @@ p:hover{
 
 fieldset{
   border-radius: 5px;
-
 }
 
-.tab2{
-  float: right;
-  clear: both;
+#fieldsetHist{
+  display: none;
 }
+
 
 
