@@ -68,10 +68,10 @@ header {
 }
 
 .effectsOut {
-  animation: fadeout 400ms;
-  -moz-animation: fadeout 400ms; /* Firefox */
-  -webkit-animation: fadeout 400ms; /* Safari et Chrome */
-  -o-animation: fadeout 400ms; /* Opera */
+  animation: fadeout 500ms;
+  -moz-animation: fadeout 500ms; /* Firefox */
+  -webkit-animation: fadeout 500ms; /* Safari et Chrome */
+  -o-animation: fadeout 500ms; /* Opera */
 }
 @keyframes fadeout {
   from {
@@ -143,6 +143,10 @@ input:invalid {
 
 }
 
+input{
+  text-transform: capitalize;
+}
+
 p{
   background-color: #e3f2f2;
   border: solid 1px #c7edec;
@@ -154,6 +158,10 @@ p:hover{
   background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+}
+
+p{
+  text-transform: capitalize;
 }
 
 
