@@ -9,7 +9,6 @@ background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1
 background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
 background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
-ntType=0 );
 }
 
 header {
@@ -123,9 +122,19 @@ header {
   border-radius: 5px;
 }
 
-#historic:hover{
-  background-color: #7a99a8;
+#btHistoric:hover{
+  background-color: #c5c5c5;
 }
+
+#btSave, #btLoad, #btClear{
+
+  background-color: #ADBDC6;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+
 
 input{
   width: 89%;

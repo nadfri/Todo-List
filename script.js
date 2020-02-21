@@ -28,7 +28,7 @@ window.onload = function () {
 
         fieldsetTask.appendChild(document.createElement("p")).innerHTML = `${check} <z>${input.value}</z> 
                                     <span class='tab'>
-                                      <i>Ajouté le: ${dateNow()}</i>${urgent}${del}
+                                      <i>Ajouté le: ${dateNow()}</i> ${urgent}${del}
                                     </span>`;
         input.value = "";
         input.focus();
@@ -130,6 +130,25 @@ window.onload = function () {
     }
   };
   
+  btSave.onclick = () =>
+  {
+    let save = {
+      listeTask: fieldsetTask.innerHTML,
+      listHistoric: fieldsetHist.innerHTML,
+    };
+    localStorage.setItem("save", JSON.stringify(save));
+  };
+
+  btLoad.onclick =() =>
+  {
+    let save = JSON.parse(localStorage.getItem('save'));
+    fieldsetTask.innerHTML = save.listeTask;
+    fieldsetHist.innerHTML = save.listHistoric;
+  };
+
+  btClear.onclick =() => this.localStorage.clear();
+
+
 
 
 
