@@ -148,9 +148,13 @@ window.onload = function () {
 
   btClear.onclick =() => 
   {
-    localStorage.clear();
-    fieldsetTask.innerHTML = "<legend>Liste des Tâches:</legend>";
-    fieldsetHist.innerHTML = "<legend>Historique:</legend>";
+    if(confirm("Ceci va effacer votre sauvegarde et vos saisies en cours\nEtes vous sûre?"))
+    {    
+      localStorage.clear();
+      fieldsetTask.innerHTML = "<legend>Liste des Tâches:</legend>";
+      fieldsetHist.innerHTML = "<legend>Historique:</legend>";
+    }
+
   };
 
 
