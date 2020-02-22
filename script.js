@@ -146,7 +146,12 @@ window.onload = function () {
     fieldsetHist.innerHTML = save.listHistoric;
   };
 
-  btClear.onclick =() => this.localStorage.clear();
+  btClear.onclick =() => 
+  {
+    localStorage.clear();
+    fieldsetTask.innerHTML = "<legend>Liste des Tâches:</legend>";
+    fieldsetHist.innerHTML = "<legend>Historique:</legend>";
+  };
 
 
 

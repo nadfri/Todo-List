@@ -5,18 +5,25 @@ body {
   display: flex;
   flex-direction: column;
   background: rgb(206,220,231);
-background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%);
-background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
-background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
+  background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
+  background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
 }
 
 header {
   background-color: black;
-  color: #ADBDC6;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+#title1{
   text-align: left;
   font-size: 45px;
-  height: 50px;
+  
 }
 
 #divControl {
@@ -120,19 +127,12 @@ header {
   background-color: #ADBDC6;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 100%;
 }
 
 #btHistoric:hover{
   background-color: #c5c5c5;
 }
-
-#btSave, #btLoad, #btClear{
-
-  background-color: #ADBDC6;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 
 
 
@@ -217,5 +217,34 @@ fieldset{
   display: none;
 }
 
+#btsStorage{
+}
+
+#btsStorage button{
+  height: 49px;
+  width: 49px;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 12px;
+  border: none;
+  outline: none;
+}
+
+#btSave{
+  background-color: red;
+}
+
+#btLoad{
+  background-color: orange;
+}
+
+#btClear{
+  background-color: green;
+}
+
+#btsStorage button:hover{
+  background-color: #c5c5c5;
+}
 
 

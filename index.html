@@ -9,7 +9,14 @@
 </head>
 
 <body>
-  <header>My ToDo List <button id="btSave">Sauvergarder</button><button id="btLoad">Récuperer</button><button id="btClear">Effacer données</button></header>
+  <header>
+    <div id="title1">My ToDo List</div>
+    <div id="btsStorage">
+      <button id="btSave"  title="Cliquez ici pour sauvegarder vos tâches">SAVE</button>
+      <button id="btLoad"  title="Cliquez ici pour charger vos tâches enregistrées">LOAD</button>
+      <button id="btClear" title="Cliquez ici pour effacer votre sauvegarde">CLEAR</button>
+    </div>
+  </header>
   <div id="divControl"></div>
   <div id="div1">
     <input type="text" id="input" placeholder="Ajouter une nouvelle tâche (Ex: Faire mes courses)" required
