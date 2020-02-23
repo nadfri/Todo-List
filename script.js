@@ -53,12 +53,12 @@ window.onload = function () {
     divControl.style.display         = "";
     divControl.innerHTML             = text;
     divControl.style.backgroundColor = color;
-    divControl.className             = "effects";
+    divControl.classList.add("effects");
 
     setTimeout(() => {
       divControl.innerHTML             = "";
       divControl.style.backgroundColor = "";
-      divControl.className             = "";
+      divControl.classList.remove("effects");
     }, 3000);    
   };
 
@@ -66,31 +66,24 @@ window.onload = function () {
 
   function deleteTask(element,text,color)
   {
-    element.target.closest("p").className = "effectsOut";
+    element.target.closest("p").classList.add("effectsOut");
     setTimeout(() => {element.target.closest("p").remove();},500);
     divControlEffects(text, color);
   }
 
-    /***************************Delete Task on Historic**********************************/
-    fieldsetHist.onclick = (element) =>
-    {
-        if (element.target.className == "del options")
-          deleteTask(element, task_delete, "pink");
-    };
-
   /******************************Running of options for the Task*************************/
     fieldsetTask.onclick = (element) =>
     {
-        if (element.target.className == "del options")
+        if (element.target.classList.contains("del"))
         {
           deleteTask(element, task_delete, "pink");
         }
 
-        else if (element.target.className == "urgent options")
+        else if (element.target.classList.contains("urgent"))
           element.target.style.opacity = (element.target.style.opacity != "1") ? "1" : "0.3";
           
 
-        else if (element.target.className == "check options")
+        else if (element.target.classList.contains("check"))
         {
           const regex = /<z>(.*)<\/z>/; //use false balise <z> to catch the text of Task
           let textTask = element.target.closest("p").innerHTML.match(regex)[0];
@@ -103,6 +96,13 @@ window.onload = function () {
           deleteTask(element,task_history,"#BBF7CA");
         }
 
+    };
+
+  /***************************Delete Task on Historic**********************************/
+    fieldsetHist.onclick = (element) =>
+    {
+      if (element.target.classList.contains("del"))
+        deleteTask(element, task_delete, "pink");
     };
 
    /********************Display of Historic***********************/

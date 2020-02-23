@@ -5,10 +5,7 @@ body {
   display: flex;
   flex-direction: column;
   background: rgb(206,220,231);
-  background: -moz-linear-gradient(top,  rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%);
-  background: -webkit-linear-gradient(top,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
   background: linear-gradient(to bottom,  rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 );
 }
 
 header {
@@ -23,7 +20,7 @@ header {
 #title1{
   text-align: left;
   font-size: 45px;
-  
+
 }
 
 #divControl {
@@ -31,11 +28,10 @@ header {
   height: 20px;
 }
 
+/***************************************************************/
 .effects {
   animation: fadein 1s;
-  -moz-animation: fadein 1s; /* Firefox */
   -webkit-animation: fadein 1s; /* Safari et Chrome */
-  -o-animation: fadein 1s; /* Opera */
 }
 @keyframes fadein {
   from {
@@ -45,15 +41,7 @@ header {
     opacity: 1;
   }
 }
-@-moz-keyframes fadein {
-  /* sur Firefox */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 @-webkit-keyframes fadein {
   /* sur Safari et Chrome */
   from {
@@ -63,21 +51,11 @@ header {
     opacity: 1;
   }
 }
-@-o-keyframes fadein {
-  /* sur Opera */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
+/***************************************************************/
 .effectsOut {
   animation: fadeout 500ms;
-  -moz-animation: fadeout 500ms; /* Firefox */
   -webkit-animation: fadeout 500ms; /* Safari et Chrome */
-  -o-animation: fadeout 500ms; /* Opera */
 }
 @keyframes fadeout {
   from {
@@ -87,15 +65,7 @@ header {
     opacity: 0;
   }
 }
-@-moz-keyframes fadeout {
-  /* sur Firefox */
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
+
 @-webkit-keyframes fadeout {
   /* sur Safari et Chrome */
   from {
@@ -105,16 +75,7 @@ header {
     opacity: 0;
   }
 }
-@-o-keyframes fadeout {
-  /* sur Opera */
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
+/***************************************************************/
 
 #div1{
   width: 100%;
@@ -127,7 +88,7 @@ header {
   background-color: #ADBDC6;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 100%;
+  font-size: 15px;
 }
 
 #btHistoric:hover{
@@ -135,7 +96,7 @@ header {
 }
 
 
-
+/***************************************************************/
 input{
   width: 89%;
   font-size: 2em;
@@ -155,6 +116,7 @@ input:invalid {
 input{
   text-transform: capitalize;
 }
+/***************************************************************/
 
 p{
   background-color: #e3f2f2;
@@ -163,10 +125,11 @@ p{
 }
 
 p:hover{
-  background: -moz-linear-gradient(top,  rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(to bottom,
+  rgba(246,248,249,1) 0%,
+  rgba(229,235,238,1) 50%,
+  rgba(215,222,227,1) 51%,
+  rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 p{
@@ -216,10 +179,7 @@ fieldset{
 #fieldsetHist{
   display: none;
 }
-
-#btsStorage{
-}
-
+/***************************************************************/
 #btsStorage button{
   height: 49px;
   width: 49px;
@@ -229,6 +189,7 @@ fieldset{
   font-size: 12px;
   border: none;
   outline: none;
+  transition: all 200ms;
 }
 
 #btSave{
@@ -245,6 +206,7 @@ fieldset{
 
 #btsStorage button:hover{
   background-color: #c5c5c5;
+  transform: rotate(360deg);
 }
-
+/***************************************************************/
 
