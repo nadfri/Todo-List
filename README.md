@@ -1,3 +1,3 @@
 # Todo-List
-Simple Todo List app
-With LocalStorage
+Todo List app
+using LocalStorage and Drag and Drop

@@ -134,6 +134,7 @@ p:hover{
 
 p{
   text-transform: capitalize;
+  margin: 2px;
 }
 
 
@@ -209,4 +210,18 @@ fieldset{
   transform: rotate(360deg);
 }
 /***************************************************************/
+
+
+.draggable {
+  position: relative;
+  cursor: move;
+  transition: all 200ms;
+}
+
+
+.dragEffects {
+  transform: scale(0.9, 0.9);
+  color: green;
+  font-weight: 900;
+}
 
