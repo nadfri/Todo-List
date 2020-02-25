@@ -76,7 +76,6 @@ header {
   }
 }
 /***************************************************************/
-
 #div1{
   width: 100%;
   display: flex;
@@ -95,13 +94,12 @@ header {
   background-color: #c5c5c5;
 }
 
-
 /***************************************************************/
 input{
   width: 89%;
   font-size: 2em;
   border-radius: 5px;
-  
+  text-transform: capitalize;
 }
 
 input:valid {
@@ -113,11 +111,7 @@ input:invalid {
 
 }
 
-input{
-  text-transform: capitalize;
-}
 /***************************************************************/
-
 p{
   background-color: #e3f2f2;
   border: solid 1px #c7edec;
@@ -136,8 +130,6 @@ p{
   text-transform: capitalize;
   margin: 2px;
 }
-
-
 
 .options{
   border: solid 1px grey;
@@ -166,7 +158,6 @@ p{
 
 }
 
-
 ::placeholder{
   font-size: 0.7em;
   font-style: italic;
@@ -175,11 +166,20 @@ p{
 
 fieldset{
   border-radius: 5px;
+  overflow: auto;
 }
 
 #fieldsetHist{
   display: none;
 }
+
+button{
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; 
+}
+
 /***************************************************************/
 #btsStorage button{
   height: 49px;
@@ -210,18 +210,108 @@ fieldset{
   transform: rotate(360deg);
 }
 /***************************************************************/
-
-
 .draggable {
   position: relative;
   cursor: move;
   transition: all 200ms;
 }
 
-
 .dragEffects {
   transform: scale(0.9, 0.9);
   color: green;
   font-weight: 900;
+}
+
+/****************Media Queries**************************************/
+@media all and (max-device-width: 480px){
+
+  body {
+    height: 100vh;
+    border: none;
+  }
+  
+  header {
+
+    height: 6vh;
+
+    
+  }
+  
+  #title1{
+    font-size: 4vh;
+  
+  }
+  
+  #divControl {
+    height: 4vh;
+    font-size: 2.5vh;
+  }
+  
+  /***************************************************************/
+  #btHistoric{
+    width: 100%;
+    height: 10vh;
+    font-size: 7vh;
+    position: absolute;
+    bottom:0;
+    right: 0;
+    background-color: #59a56c;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  #btHistoric:hover{
+    background-color: #59a56c;
+  }
+  
+  /***************************************************************/
+  input{
+    width: 100%;
+    font-size: 5vh;
+    height: 7vh;
+  }
+
+  /***************************************************************/
+  p{
+    
+    font-size: 5vw;
+    background-color: transparent;
+    border: none;
+  }
+
+  fieldset{
+    font-size: 2.5vh;
+    padding: 1px;
+  }
+
+  .tab{
+    float: right;
+  
+  }
+  
+  .tab2{
+    float: right;
+    line-height: 120%;
+  
+  }
+  
+  
+  ::placeholder{
+    font-size: 2.3vh;
+  }
+
+  /***************************************************************/
+  #btsStorage button{
+    height: 6vh;
+    width: 6vh;
+    font-size: 2.5vw;
+
+  }
+
+  /***************************************************************/
+  
+
+
+
 }
 

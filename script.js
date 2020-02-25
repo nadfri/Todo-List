@@ -37,10 +37,14 @@ window.onload = function () {
         p.classList.add("draggable");
         p.draggable = true;
 
-        fieldsetTask.appendChild(p).innerHTML = `${check} <z>${input.value}</z> 
-                                    <span class='tab'>
-                                      <i>Ajouté le: ${dateNow()}</i> ${urgent}${del}
-                                    </span>`;
+        if (navigator.userAgent.indexOf("Mobile") !=-1)
+          fieldsetTask.appendChild(p).innerHTML = `${check} <z>${input.value}</z> 
+            <span class='tab'>${urgent}${del}</span>`;
+        else
+          fieldsetTask.appendChild(p).innerHTML = `${check} <z>${input.value}</z> 
+          <span class='tab'><i>Ajouté le: ${dateNow()}</i> ${urgent}${del}
+          </span>`;
+
         input.value = "";
         input.focus();
 
@@ -57,7 +61,11 @@ window.onload = function () {
     let month  = ((date.getMonth() + 1) < 10) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
     let hour   = (date.getHours()       < 10) ? "0" + date.getHours() : date.getHours();
     let minute = (date.getMinutes()     < 10) ? "0" + date.getMinutes() : date.getMinutes();
-    return `${day}/${month}/${date.getFullYear()} à ${hour}:${minute}`;
+
+    if (navigator.userAgent.indexOf("Mobile") !=-1)
+      return `${day}/${month}`;
+    else
+      return `${day}/${month}/${date.getFullYear()} à ${hour}:${minute}`;
   };
 
 /********************************Div Effects**********************************************/
@@ -98,8 +106,14 @@ window.onload = function () {
     {
       const regex = /<z>(.*)<\/z>/; //use false balise <z> to catch the text of Task
       let textTask = element.target.closest("p").innerHTML.match(regex)[0];
-      fieldsetHist.appendChild(document.createElement("p")).innerHTML = `✔️${textTask}
-      <span class='tab2'><i>Fait le: ${dateNow()}</i> ${del}</span>`;
+
+      if (navigator.userAgent.indexOf("Mobile") !=-1)
+        fieldsetHist.appendChild(document.createElement("p")).innerHTML = `✔️${textTask}
+        <span class='tab2'>${del}</span>`;
+
+      else
+        fieldsetHist.appendChild(document.createElement("p")).innerHTML = `✔️${textTask}
+        <span class='tab2'><i>Fait le: ${dateNow()}</i> ${del}</span>`;
 
       element.target.innerHTML =""; //del check button faster to avoid bug in historic
       deleteTask(element,task_history,"#BBF7CA");
@@ -178,8 +192,6 @@ window.onload = function () {
 /******************************Drag and Drop****************************************/
   const dragNDrop = (element) => 
   {
-    
-  
     element.ondragstart     = event =>
     { //event is dragstart
       elementBeforeDrag     = element; //save the element before change 
@@ -200,6 +212,7 @@ window.onload = function () {
     element.ondragend    = ()      => element.style.opacity = "1";
   
   };
+  
   
 /*************************End of window.onload***************************************/
 }
