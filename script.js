@@ -56,17 +56,15 @@ window.onload = function () {
 
 /*******************************Add a date of Task****************************************/
   const dateNow = () => { //return date in the good format
-    const date = new Date();
-    let day    = (date.getDate()        < 10) ? "0" + date.getDate() : date.getDate();
-    let month  = ((date.getMonth() + 1) < 10) ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
-    let hour   = (date.getHours()       < 10) ? "0" + date.getHours() : date.getHours();
-    let minute = (date.getMinutes()     < 10) ? "0" + date.getMinutes() : date.getMinutes();
+    const date  = new Date;
+
 
     if (navigator.userAgent.indexOf("Mobile") !=-1)
-      return `${day}/${month}`;
+      return Intl.DateTimeFormat().format(date); //only date
     else
-      return `${day}/${month}/${date.getFullYear()} à ${hour}:${minute}`;
-  };
+      return Intl.DateTimeFormat("fr-FR",{day: "numeric", month: "numeric", year:"numeric", 
+                                          hour:"numeric", minute:"numeric"}).format(date);
+  };                                    // date + time
 
 /********************************Div Effects**********************************************/
   const divControlEffects = (text, color) =>{
