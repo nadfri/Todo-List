@@ -23,7 +23,7 @@ window.onload = function () {
   let elementBeforeDrag; //use like a temp for the drag n drop
  
 /*****************************Add New Task*************************************************/
-  input.onkeyup = () => 
+  input.onkeyup = (event) => 
   { 
     if (event.keyCode == 13) //Confirm with ENTRY key (13)
     {
@@ -65,21 +65,6 @@ window.onload = function () {
       return Intl.DateTimeFormat("fr-FR",{day: "numeric", month: "numeric", year:"numeric", 
                                           hour:"numeric", minute:"numeric"}).format(date);
   };                                    // date + time
-
-/********************************Div Effects**********************************************/
-  const divControlEffects = (text, color) =>{
-    divControl.style.display         = "none";
-    divControl.style.display         = "";
-    divControl.innerHTML             = text;
-    divControl.style.backgroundColor = color;
-    divControl.classList.add("effects");
-
-    setTimeout(() => {
-      divControl.innerHTML             = "";
-      divControl.style.backgroundColor = "";
-      divControl.classList.remove("effects");
-    }, 3000);    
-  };
 
 /********************************Delete Task*********************************************/
   const deleteTask = (element,text,color) =>
@@ -210,7 +195,22 @@ window.onload = function () {
     element.ondragend    = ()      => element.style.opacity = "1";
   
   };
+
+  /********************************Div Effects**********************************************/
+  const divControlEffects = (text, color) =>{
+    divControl.style.display         = "none";
+    divControl.style.display         = "";
+    divControl.innerHTML             = text;
+    divControl.style.backgroundColor = color;
+    divControl.classList.add("effects");
+
+    setTimeout(() => {
+      divControl.innerHTML             = "";
+      divControl.style.backgroundColor = "";
+      divControl.classList.remove("effects");
+    }, 3000);    
+  };
   
   
-/*************************End of window.onload***************************************/
+ /*************************End of window.onload***************************************/
 }
